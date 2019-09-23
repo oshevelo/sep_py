@@ -22,3 +22,12 @@ def get_str_expression_to_calc():
     str_expression = input(
         'Please enter expresion to calculate: ')
     return str_expression
+
+
+def get_date_value(date_value):
+    date_value = input(f'Please enter "{date_value}" from now: ')
+    return int(date_value) if date_value != '' else date_value
+
+
+def date_calculator_greeting():
+    print('Enter day month year to calculate or skip')

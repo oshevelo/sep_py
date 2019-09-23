@@ -8,7 +8,8 @@ def calculate_str_expresion(str_expresion):
     result = simple_eval(str_expresion)
     return result
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     # Tests
     assert calculate_str_expresion('2+2') == 4
     assert calculate_str_expresion('2 +    2') == 4
@@ -22,5 +23,3 @@ if __name__=='__main__':
     except ValueError as e:
         assert e.args[0] == 'Please string expression'
     print('Tests passed')
-
-
