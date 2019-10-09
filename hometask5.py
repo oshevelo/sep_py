@@ -1,4 +1,3 @@
-
 class Kitchen:
 
     def __init__(self, lenght, width, height, quantity_of_doors, quantity_of_windows):
@@ -8,10 +7,8 @@ class Kitchen:
         self.quantity_of_doors = quantity_of_doors
         self.quantity_of_windows = quantity_of_windows
 
-
     def __str__(self):
         return 'Kitchen'
-
 
     def turn_on_lights_in_kitchen(self):
         print('Lights are turned on')
@@ -25,11 +22,8 @@ class Kitchen:
     def close_door(self):
         print('Door is closed')
 
-
 k = Kitchen(lenght=10, width=5, height=3.5,
             quantity_of_doors=1, quantity_of_windows=2)
-
-
 
 class Device:
 
@@ -42,14 +36,12 @@ class Device:
         self.price = price
 
     def __str__(self):
-        return 'class Device'    #переважно в цьому дивайсі створють якій обєкти?
+        return 'class Device'
 
     def sell_on_device(self, discount=0.7):
         discount = discount * self.price
         print(discount)
         print('Was price = {}, now price = {} ,you got discount on 30%'.format(self.price, round(discount)))
-
-
 
 class Stove(Device):
 
@@ -82,7 +74,6 @@ object_1.set_temperature(100)
 object_1.display = 'Yes'
 object_1.sell_on_device()
 
-
 object_2 = Stove(brand='Siemens', manufactured='Germany', color='White',
           weight=45, guarantee='2 Year', price=1000, type='Gas',
           grill='Yes', convection='No')
@@ -108,7 +99,6 @@ class Washing_machine(Device):
         discount = discount * self.price
         print(discount)
         print('Was price = {}, now price = {} ,you got discount on 40%'.format(self.price, round(discount)))
-
 
 object_1 = Washing_machine(brand='Indesit', manufactured='Italy', color='White', weight=35,
                            guarantee='1 Year', price=700, type='Fully_Integrated',
