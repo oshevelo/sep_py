@@ -40,19 +40,18 @@ class Device:
 
     def sell_on_device(self, discount=0.7):
         discount = discount * self.price
-        print(discount)
         print('Was price = {}, now price = {} ,you got discount on 30%'.format(self.price, round(discount)))
 
-class Stove(Device):
+class Gas_stove(Device):
 
-    def __init__(self, brand, manufactured, color, weight, guarantee, price, type, grill, convection):
+    def __init__(self, brand, manufactured, color, weight, guarantee, price, grill, gas_control, surface_grating_materia):
         super().__init__(brand, manufactured, color, weight, guarantee, price)
-        self.type = type
         self.grill = grill
-        self.convection = convection
+        self.gas_control = gas_control
+        self.surface_grating_materia = surface_grating_materia
 
     def __str__(self):
-        return 'class Stove(Device), brand = {}, price = {}'.format(self.brand,self.price)
+        return 'class Stove(Device), brand = {}, price = {}'.format(self.brand, self.price)
 
     def turn_on_stove(self):
         print('stove are turned on')
@@ -61,25 +60,41 @@ class Stove(Device):
         print('stove are turned off')
 
     def set_temperature(self, state_degree):
-        degree = state_degree
-        print('state_degree = {}'.format(degree))
+        print('state_degree = {}'.format(state_degree))
 
-object_1 = Stove(brand='Bosch', manufactured='Poland', color='Space_gray',
-          weight=17, guarantee='2 Year', price=3000, type='Electrical',
-          grill='No', convection='Yes')
+object_1 = Gas_stove(brand='Bosch', manufactured='Poland', color='Space_gray',
+          weight=35, guarantee='3 Year', price=1500, grill='Yes', gas_control='Yes',
+          surface_grating_materia='Enameled')
 
 print(object_1)
-object_1.turn_on_stove()                       # але методи то вони мають  різні?
+object_1.turn_on_stove()
 object_1.set_temperature(100)
-object_1.display = 'Yes'
 object_1.sell_on_device()
 
-object_2 = Stove(brand='Siemens', manufactured='Germany', color='White',
-          weight=45, guarantee='2 Year', price=1000, type='Gas',
-          grill='Yes', convection='No')
+class Electric_stove(Device):
 
-print(object_2)
-object_2.volume = '70 liters'
+    def __init__(self, brand, manufactured, color, weight, guarantee, price, convection, grill, screen ):
+        super().__init__(brand, manufactured, color, weight, guarantee, price)
+        self.convection = convection
+        self.grill = grill
+        self.screen = screen
+
+    def __str__(self):
+        return 'class Stove(Device), brand = {}, price = {}'.format(self.brand, self.price)
+
+    def turn_on_stove(self):
+        print('stove are turned on')
+
+    def turn_off_stove(self):
+        print('stove are turned off')
+
+object_1 = Electric_stove(brand='Siemens', manufactured='Germany', color='Black',
+                 weight=17, guarantee='2 Year', price=3000, convection='Yes',
+                 grill='No', screen='Yes')
+
+print(object_1)
+object_1.turn_on_stove()
+object_1.sell_on_device()
 
 class Washing_machine(Device):
 
@@ -99,6 +114,7 @@ class Washing_machine(Device):
         discount = discount * self.price
         print(discount)
         print('Was price = {}, now price = {} ,you got discount on 40%'.format(self.price, round(discount)))
+
 
 object_1 = Washing_machine(brand='Indesit', manufactured='Italy', color='White', weight=35,
                            guarantee='1 Year', price=700, type='Fully_Integrated',
