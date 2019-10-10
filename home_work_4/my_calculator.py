@@ -17,6 +17,18 @@ class MyCalculator(StrCalculator, DateCalculator):
         else:
             raise ValueError('calculator mode unknown')
 
+    @classmethod
+    def str_calculator(cls):
+        return cls('str_calculator')
+
+    @classmethod
+    def value_calculator(cls):
+        return cls('value_calculator')
+
+    @classmethod
+    def date_calculator(cls):
+        return cls('date_calculator')
+
     def my_value_calculator(self):
         value1 = self.interface.get_value_to_calculate()
         op1 = self.interface.get_math_operation()
@@ -48,6 +60,6 @@ class MyCalculator(StrCalculator, DateCalculator):
         self.interface.print_calcul_result(r)
 
 
-calc_1 = MyCalculator(calculator_mode='str_calculator')
-calc_2 = MyCalculator(calculator_mode='value_calculator')
-calc_3 = MyCalculator(calculator_mode='date_calculator')
+calc_1 = MyCalculator.str_calculator()
+calc_2 = MyCalculator.value_calculator()
+calc_3 = MyCalculator.date_calculator()
