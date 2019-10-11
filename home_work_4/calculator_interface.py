@@ -1,9 +1,31 @@
+import math
+
+
 class CalculatorInterface:
 
-    @staticmethod
-    def get_value_to_calculate():
-        num = input('Please enter a value: ')
-        return num
+    def __init__(self):
+        self.__input_value = ""
+
+    @property
+    def input_value(self):
+        return self.__input_value
+
+    @input_value.setter
+    def input_value(self, value):
+        if value.isdigit():
+            self.__input_value = value
+        elif value.replace(".", "").isdigit():
+            self.__input_value = value
+        elif value.replace(",", "").isdigit():
+            self.__input_value = value.replace(",", ".")
+        elif value.lower() == 'pi':
+            self.__input_value = str(math.pi)
+        else:
+            raise ValueError('Value is not a number or math constant')
+
+    def get_value_to_calculate(self):
+        self.input_value = input('Please enter a value: ')
+        return self.input_value
 
     @staticmethod
     def get_math_operation():
