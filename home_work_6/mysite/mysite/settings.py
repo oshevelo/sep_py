@@ -81,12 +81,24 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'OPTIONS': {
+#             'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
+#         },
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'polls',
+        'USER': 'mysite',
+        'PASSWORD': 'koo7suQu',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
