@@ -4,3 +4,4 @@ Django==2.2.6
 # mysqlclient==1.4.4
 psycopg2-binary==2.8.3
 djangorestframework==3.10.3
+aiohttp==3.6.2
